@@ -98,10 +98,13 @@
         }
         @media (max-width: 600px) {
             h1 {
-                font-size: 2em;
+                font-size: 3em;
             }
-            p, .small-text {
+            p {
                 font-size: 1em;
+            }
+            .small-text{
+                font-size: 0.8em;
             }
             .email-form {
                 flex-direction: column;
@@ -117,6 +120,19 @@
                 width: 90%; 
                 margin-top: 10px; 
             }
+        }
+        @media (max-width: 450px) {
+            h1 {
+                font-size: 2.4em;
+            }
+            .small-text{
+                font-size: 0.7em;
+            }
+            .image-content img {
+            max-width: 200px;
+            height: auto;
+            margin-bottom: 20px;
+        }
         }
         .thank-you-card {
             padding: 20px;
