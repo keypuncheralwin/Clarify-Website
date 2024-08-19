@@ -4,200 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clarifapp - Coming Soon</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #0f0c29;  /* fallback for old browsers */
-            background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
-            background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            color: #fff;
-            text-align: center;
-        }
-        .content {
-            max-width: 800px;
-            width: 100%;
-            padding: 20px;
-        }
-        .image-content img {
-            max-width: 250px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        h1 {
-            font-size: 5em;
-            margin-bottom: 10px;
-        }
-        p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        .small-text {
-            font-size: 0.9em;
-            margin-bottom: 20px;
-        }
-        .email-form {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            position: relative;
-        }
-        .email-form input[type="text"],
-        .email-form input[type="email"] {
-            padding: 10px;
-            border: none;
-            font-size: 1em;
-            box-sizing: border-box;
-        }
-        .email-form input[type="text"] {
-            border-radius: 5px 0 0 5px;
-            flex: 1;
-            min-width: 100px;
-            margin-right: 10px;
-        }
-        .email-form input[type="email"] {
-            border-radius: 0;
-            flex: 2;
-            min-width: 200px;
-        }
-        .email-form button[type="submit"] {
-            padding: 10px 20px;
-            background-color: #060a23;
-            color: #fff;
-            border: none;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            font-size: 1em;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 40px;
-        }
-        .email-form button[type="submit"]:hover {
-            background-color: #555;
-        }
-        .spinner {
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #333;
-            border-radius: 50%;
-            width: 15px;
-            height: 15px;
-            animation: spin 1s linear infinite;
-            display: none;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 3em;
-            }
-            p {
-                font-size: 1em;
-            }
-            .small-text{
-                font-size: 0.8em;
-            }
-            .email-form {
-                flex-direction: column;
-            }
-            .email-form input[type="text"],
-            .email-form input[type="email"] {
-                margin: 5px 0;
-                border-radius: 5px;
-                width: 100%; 
-            }
-            .email-form button[type="submit"] {
-                border-radius: 5px;
-                width: 90%; 
-                margin-top: 10px; 
-            }
-        }
-        @media (max-width: 450px) {
-            h1 {
-                font-size: 2.4em;
-            }
-            .small-text{
-                font-size: 0.7em;
-            }
-            .image-content img {
-            max-width: 200px;
-            height: auto;
-            margin-bottom: 20px;
-        }
-        }
-        .thank-you-card {
-            padding: 20px;
-            border: 2px solid #fff;
-            border-radius: 10px; 
-            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
-            display: none;
-            margin-top: 20px;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out; 
-        }
-
-        .thank-you-card.show {
-            display: block;
-            opacity: 1;
-        }
-
-        .thank-you-card p {
-            font-size: 1em; 
-            color: #fff;
-        }
-
-        .toast {
-    visibility: hidden;
-    min-width: 250px;
-    background-color: #060a23;
-    color: #fff;
-    text-align: center;
-    border-radius: 2px;
-    padding: 16px;
-    position: fixed;
-    z-index: 1;
-    left: 50%;
-    bottom: 30px;
-    font-size: 17px;
-    transform: translateX(-50%); 
-}
-
-.toast.show {
-    visibility: visible;
-    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-    animation: fadein 0.5s, fadeout 0.5s 2.5s;
-}
-
-@-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
-}
-
-@keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
-}
-
-@-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
-}
-
-@keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
-}
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
     
     <!-- Pixel Code for https://app.tinyanalytics.io/ -->
     <script defer src="https://app.tinyanalytics.io/pixel/UMKsDWOAaLww5UwJ"></script>
@@ -205,13 +12,14 @@
 
 </head>
 <body>
+    <!-- Main Content Section -->
     <div class="content">
         <div class="image-content">
-            <img src="icon.png" alt="Clarifapp Icon">
+            <img src="assets/icon.png" alt="Clarifapp Icon">
         </div>
         <h1>Clarify is Coming!</h1>
         <p>Clarify cuts through the clutter of the internet, delivering the heart of the content!</p>
-        <p class="small-text">Sign up with your email to be the first to experience a clearer, more efficient way to navigate the web. Don’t miss out on transforming your online experience—get notified when we go live!</p>
+        <!-- Form and thank you message... -->
         <form class="email-form" id="subscribeForm" action="https://us-central1-clarify-c7c86.cloudfunctions.net/api/subscribe" method="POST">
             <input type="text" name="name" placeholder="Name">
             <input type="email" name="email" placeholder="Email" required>
@@ -224,69 +32,13 @@
         <div class="thank-you-card" id="thankYouCard">
             <p>Thank you for subscribing to Clarify! We'll keep you updated with the latest news and launch information.</p>
         </div>
+
+        <!-- Link to Data Deletion Information -->
+        <!-- <p><a href="deletemydata.html">Delete My Data</a></p> -->
     </div>
 
     <div id="toast"></div>
 
-    <script>
-        document.getElementById("subscribeForm").addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Show spinner
-    const submitButton = event.target.querySelector('button[type="submit"]');
-    const spinner = submitButton.querySelector('.spinner');
-    const buttonText = submitButton.querySelector('.button-text');
-
-    buttonText.style.display = "none";
-    spinner.style.display = "block";
-
-    const formData = {
-        name: event.target.querySelector('input[name="name"]').value,
-        email: event.target.querySelector('input[name="email"]').value
-    };
-
-    fetch(event.target.action, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(formData)
-    })
-    .then(response => response.json())
-    .then(data => {
-        spinner.style.display = "none";
-        buttonText.style.display = "block";
-        if (data.success) {
-            document.getElementById("subscribeForm").style.display = "none";
-            const thankYouCard = document.getElementById("thankYouCard");
-            thankYouCard.style.opacity = 0;
-            thankYouCard.style.display = 'block';
-            setTimeout(() => {
-                thankYouCard.style.opacity = 1;
-            }, 10);
-            showToast("Subscription successful!");
-        } else if (data.message === "Email is already subscribed") {
-            showToast("You're already subscribed to Clarify!");
-        } else {
-            showToast("Subscription failed. Please try again.");
-        }
-    })
-    .catch(error => {
-        spinner.style.display = "none";
-        buttonText.style.display = "block";
-        showToast("An error occurred. Please try again.");
-    });
-});
-
-function showToast(message) {
-    const toast = document.getElementById("toast");
-    toast.innerText = message;
-    toast.className = "toast show";
-    setTimeout(() => {
-        toast.className = toast.className.replace("show", "");
-    }, 3000);
-}
-
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
