@@ -60,10 +60,10 @@ export default function Home() {
   const handlePhone1Click = () => setIsPhone1Replaced(!isPhone1Replaced);
   const handlePhone3Click = () => setIsPhone3Replaced(!isPhone3Replaced);
 
-  const phone1 = { src: '/phone1.svg', alt: 'Phone 1' };
-  const phone2 = { src: '/phone2.svg', alt: 'Phone 2' };
-  const phone3 = { src: '/phone3.svg', alt: 'Phone 3' };
-  const phone4 = { src: '/phone4.svg', alt: 'Phone 4' };
+  const phone1 = { src: '/Phone1.svg', alt: 'Phone 1' };
+  const phone2 = { src: '/Phone2.svg', alt: 'Phone 2' };
+  const phone3 = { src: '/Phone3.svg', alt: 'Phone 3' };
+  const phone4 = { src: '/Phone4.svg', alt: 'Phone 4' };
 
   return (
     <div>
