@@ -3,7 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import Script from 'next/script';
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <script defer src="https://app.tinyanalytics.io/pixel/UMKsDWOAaLww5UwJ"></script>
+      <Script src="https://app.tinyanalytics.io/pixel/uxLOOTa0qphamLeS"></Script>
       <body className={inter.className}>
         <ToastContainer theme="dark" />
         {children}
