@@ -6,11 +6,14 @@ import { useEffect, useState } from 'react';
 import NotifyMeForm from '@/components/NotifyMeForm';
 import ContactUs from '@/components/ContactUs';
 import { useInView } from 'react-intersection-observer';
+import { ClipLoader } from 'react-spinners';
 
 export default function Home() {
   const [isPhone1Replaced, setIsPhone1Replaced] = useState(false);
   const [isPhone3Replaced, setIsPhone3Replaced] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [loadingPhone1, setLoadingPhone1] = useState(false);
+  const [loadingPhone3, setLoadingPhone3] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
 
   useEffect(() => {
@@ -57,8 +60,15 @@ export default function Home() {
     }
   };
 
-  const handlePhone1Click = () => setIsPhone1Replaced(!isPhone1Replaced);
-  const handlePhone3Click = () => setIsPhone3Replaced(!isPhone3Replaced);
+  const handlePhone1Click = () => {
+    setLoadingPhone1(true);
+    setIsPhone1Replaced(!isPhone1Replaced);
+  };
+
+  const handlePhone3Click = () => {
+    setLoadingPhone3(true);
+    setIsPhone3Replaced(!isPhone3Replaced);
+  };
 
   const phone1 = { src: '/Phone1.svg', alt: 'Phone 1' };
   const phone2 = { src: '/Phone2.svg', alt: 'Phone 2' };
@@ -103,11 +113,19 @@ export default function Home() {
       <div id="how-it-works" className="section how-it-works" ref={howItWorksRef}>
         <div id="carousel-wrapper-1" className="carousel-wrapper">
           <div className={`image-container ${isPhone1Replaced ? 'show' : ''}`}>
-            <Image src={isPhone1Replaced ? phone2.src : phone1.src} alt={phone1.alt} width={400} height={800} layout="responsive" />
+            {loadingPhone1 && <ClipLoader size={20} color="#ffffff" />}
+            <Image
+              src={isPhone1Replaced ? phone2.src : phone1.src}
+              alt={phone1.alt}
+              width={400}
+              height={800}
+              layout="responsive"
+              onLoadingComplete={() => setLoadingPhone1(false)}
+            />
           </div>
           {isMobile ? (
             <button className="clarify-button" onClick={handlePhone1Click}>
-              {isPhone1Replaced ? 'Go back' : 'See Clarified Result'}
+              {loadingPhone1 ? <ClipLoader size={20} color="#ffffff" /> : isPhone1Replaced ? 'Go back' : 'See Clarified Result'}
             </button>
           ) : null}
         </div>
@@ -121,7 +139,7 @@ export default function Home() {
           </p>
           {!isMobile ? (
             <button className="clarify-button" onClick={handlePhone1Click}>
-              {isPhone1Replaced ? 'Go back' : 'See Clarified Result'}
+              {loadingPhone1 ? <ClipLoader size={20} color="#ffffff" /> : isPhone1Replaced ? 'Go back' : 'See Clarified Result'}
             </button>
           ) : null}
           <br />
@@ -137,17 +155,25 @@ export default function Home() {
           <p>Within seconds, Clarify analyzes the YouTube thumbnail and compares it with the YouTube content to bring you clarity on the video!</p>
           {!isMobile ? (
             <button className="clarify-button" onClick={handlePhone3Click}>
-              {isPhone3Replaced ? 'Go back' : 'See Clarified Result'}
+              {loadingPhone3 ? <ClipLoader size={20} color="#ffffff" /> : isPhone3Replaced ? 'Go back' : 'See Clarified Result'}
             </button>
           ) : null}
         </div>
         <div id="carousel-wrapper-2" className="carousel-wrapper">
           <div className={`image-container ${isPhone3Replaced ? 'show' : ''}`}>
-            <Image src={isPhone3Replaced ? phone4.src : phone3.src} alt={phone3.alt} width={400} height={800} layout="responsive" />
+            {loadingPhone3 && <ClipLoader size={20} color="#ffffff" />}
+            <Image
+              src={isPhone3Replaced ? phone4.src : phone3.src}
+              alt={phone3.alt}
+              width={400}
+              height={800}
+              layout="responsive"
+              onLoadingComplete={() => setLoadingPhone3(false)}
+            />
           </div>
           {isMobile ? (
             <button className="clarify-button" onClick={handlePhone3Click}>
-              {isPhone3Replaced ? 'Go back' : 'See Clarified Result'}
+              {loadingPhone3 ? <ClipLoader size={20} color="#ffffff" /> : isPhone3Replaced ? 'Go back' : 'See Clarified Result'}
             </button>
           ) : null}
         </div>
