@@ -361,3 +361,45 @@ body {
     width: 20vw;
   }
 }
+
+
+.page-container {
+  padding: 2rem;
+  color: #cccccc;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.page-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #663AB6;
+}
+
+.page-container h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #cccccc;
+}
+
+.page-container p {
+  margin-bottom: 1rem;
+}
+
+.page-container img {
+  margin: 1rem 0;
+  max-width: 60%;
+  height: auto;
+}
+
+.page-container a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.page-container a:hover {
+  color: #663AB6;
+}
