@@ -7,6 +7,8 @@ import NotifyMeForm from '@/components/NotifyMeForm';
 import ContactUs from '@/components/ContactUs';
 import { useInView } from 'react-intersection-observer';
 import { ScaleLoader } from 'react-spinners';
+import { FaPlay } from 'react-icons/fa';
+import VideoModal from '@/components/VideoModal';
 
 export default function Home() {
   const [isPhone1Replaced, setIsPhone1Replaced] = useState(false);
@@ -15,11 +17,12 @@ export default function Home() {
   const [loadingPhone1, setLoadingPhone1] = useState(false);
   const [loadingPhone3, setLoadingPhone3] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 768px)');
     setIsMobile(mediaQuery.matches);
-    const handleMediaChange = (e: { matches: boolean | ((prevState: boolean) => boolean) }) => {
+    const handleMediaChange = (e: { matches: boolean }) => {
       setIsMobile(e.matches);
     };
     mediaQuery.addEventListener('change', handleMediaChange);
@@ -70,6 +73,14 @@ export default function Home() {
     setIsPhone3Replaced(!isPhone3Replaced);
   };
 
+  const handleOpenModal = () => {
+    setIsVideoModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsVideoModalOpen(false);
+  };
+
   const phone1 = { src: '/Phone1.svg', alt: 'Phone 1' };
   const phone2 = { src: '/Phone2.svg', alt: 'Phone 2' };
   const phone3 = { src: '/Phone3.svg', alt: 'Phone 3' };
@@ -77,6 +88,7 @@ export default function Home() {
 
   return (
     <div>
+      <VideoModal isOpen={isVideoModalOpen} onRequestClose={handleCloseModal} />
       <div className="nav">
         <Link
           className={activeSection === 'home' ? 'highlighted-link' : ''}
@@ -104,6 +116,12 @@ export default function Home() {
         <h1>
           Cut through the clutter with <span className="clarify">Clarify</span>
         </h1>
+        <div className="watch-demo-container">
+          <button className="notify-button watch-demo-button" onClick={handleOpenModal}>
+            <FaPlay style={{ marginRight: '8px' }} />
+            Watch Demo
+          </button>
+        </div>
         <h2>
           When every inch of the internet is fighting for your attention, Clarify helps you quickly see through the misleading headlines and thumbnails by providing instant insights directly in a pop-up modal, so you can stay focused without the disruption of opening another app.
           <NotifyMeForm />
